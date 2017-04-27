@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cards View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="Week_5_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,49 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="8Kw-rE-P98">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="dMN-8t-R1p"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="03e-nH-bVT">
+                                <rect key="frame" x="46.5" y="193" width="281" height="281"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="03e-nH-bVT" secondAttribute="height" multiplier="1:1" id="Qkf-8q-cDK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="nGG-7o-hT7">
+                                <rect key="frame" x="50" y="539" width="275" height="108"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="03e-nH-bVT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="3mc-t9-q6y"/>
+                            <constraint firstItem="nGG-7o-hT7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="40b-zT-fhw"/>
+                            <constraint firstItem="03e-nH-bVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5VQ-oX-ijn"/>
+                            <constraint firstAttribute="trailing" secondItem="8Kw-rE-P98" secondAttribute="trailing" id="AxI-Cs-aFb"/>
+                            <constraint firstItem="03e-nH-bVT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fxj-rL-3zZ"/>
+                            <constraint firstAttribute="trailing" secondItem="nGG-7o-hT7" secondAttribute="trailing" constant="50" id="cKC-CM-cbi"/>
+                            <constraint firstItem="8Kw-rE-P98" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gzZ-gG-eja"/>
+                            <constraint firstItem="8Kw-rE-P98" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hzf-uU-ZnE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nGG-7o-hT7" secondAttribute="bottom" constant="20" id="sD3-5N-NAc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="centerLayoutContraint" destination="5VQ-oX-ijn" id="MbS-cF-oQj"/>
+                        <outlet property="profileImageView" destination="03e-nH-bVT" id="s3p-UY-mWI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="ryan" width="449" height="514"/>
+    </resources>
 </document>
